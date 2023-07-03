@@ -23,7 +23,7 @@ func APIResponse(message string, code int, status string, data interface{}) Resp
 	return Response{Meta: meta, Data: data}
 }
 
-func FormatError(err error) []string {
+func FormatValidationError(err error) []string {
 	var errors []string
 
 	for _, e := range err.(validator.ValidationErrors) {
